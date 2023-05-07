@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ImageController::class, 'index'])->name('home');
 Route::get('/create', [ImageController::class, 'create'])->name('create');
 Route::post('/create', [ImageController::class, 'store'])->name('store');
-Route::delete('/{image}', [ImageController::class, 'delete'])->name('home');
+Route::delete('/{image}', [ImageController::class, 'delete'])->name('delete');
 

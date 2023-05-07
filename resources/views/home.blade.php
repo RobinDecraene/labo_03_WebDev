@@ -16,15 +16,23 @@
 
     @foreach ($images as $image)
     <tr>
-      <td><img src=""></td>
-      <td></td>
-      <td><button type="submit">Verwijder</button></td>
+      <td><img src="{{ $image->image }}"></td>
+      <td>{{ $image->bronlocatie }}</td>
+      <td>
+        <form action="{{ route('delete', $image->id) }}" method="POST">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger">Verwijder</button>
+      </form>
+      </td>
     </tr>
       
     @endforeach
   </table>
  
-  <button>Sla nieuwe afbeelding op</button>
+  <a href="/create">
+    <button>Sla nieuwe afbeelding op</button>
+  </a>
 
 </main>
 
