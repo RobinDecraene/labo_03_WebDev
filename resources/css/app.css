@@ -12,21 +12,29 @@ main {
 
 table {
   width: 80%;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 th {
-  border: solid green;
+  background-color: green;
+  color: white;
+  font-size: 1.2rem;
 }
 
 td {
   border: solid lightgray;
 }
 
+img {
+  width: 8rem;
+  height: auto;
+}
 
 button {
   background-color: green;
   color: white;
   text-decoration: none;
   padding: 0.5rem;
+  border: none;
+  margin: 0.5rem;
 }

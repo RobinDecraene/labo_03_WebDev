@@ -9,9 +9,10 @@
 <main>
   <table>
     <tr>
-      <th>title</th>
-      <th>url</th>
+      <th>Title</th>
+      <th>Url</th>
       <th>Image</th>
+      <th></th>
     </tr>
 
     @foreach ($uploads as $upload)
