@@ -16,14 +16,14 @@
 
     @foreach ($uploads as $upload)
     <tr>
-      <td>{{ $upload->title}}></td>
+      <td>{{ $upload->title}}</td>
       <td>{{ $upload->url }}</td>
-      <td><img src="{{ $upload->upload }}"></td>
+      <td><img src="{{ $upload->url }}"></td>
       <td>
         <form action="{{ route('delete', $upload->id) }}" method="POST">
           @csrf
           @method('DELETE')
-          <button type="submit" class="btn btn-danger">Verwijder</button>
+          <button type="submit">Verwijder</button>
       </form>
       </td>
     </tr>
