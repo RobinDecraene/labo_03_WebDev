@@ -32,9 +32,8 @@
     @endforeach
   </table>
  
-  <a href="/create">
     <button>Sla nieuwe afbeelding op</button>
-  </a>
+
 
 </main>
 

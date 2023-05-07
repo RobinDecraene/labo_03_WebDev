@@ -5,12 +5,12 @@
 
 
 @section('content')
-
+<main>
   <form action="{{ route('store') }}" method="POST">
         @csrf
         @method('POST')
 
-        <h1>Voeg een nieuwe afbeelding toe</h1>
+        <h1 class="title">Voeg een nieuwe afbeelding toe</h1>
 
         @if($errors->any())
         <ul style="color: red;">
@@ -20,25 +20,25 @@
         </ul>
     @endif
 
-    <div>
+    <div class="add">
       <label for="title" class="form-label">Title</label>
       <input
           type="text"  name="title" id="title" value="{{ old('title') }}"
           @if($errors->has('title')) style="border-color: red;" @endif>
     </div>
 
-    <div>
+    <div class="add">
       <label for="url" class="form-label">Url</label>
       <input
           type="text"  name="url" id="url" value="{{ old('url') }}"
           @if($errors->has('url')) style="border-color: red;" @endif>
     </div>
 
-    <div>
+    <a href="/">
       <button type="submit" >Voeg nieuwe afbeelding toe</button>
-    </div>
+    </a>
 
   </form>
-
+</main>
 
 @endsection
