@@ -13,14 +13,18 @@
       <th>Bestandslocatie</th>
       <th></th>
     </tr>
+
+    @foreach ($images as $image)
     <tr>
+      <td><img src=""></td>
       <td></td>
-      <td></td>
-      <td></td>
+      <td><button type="submit">Verwijder</button></td>
     </tr>
+      
+    @endforeach
   </table>
  
-  <a class="btn" href="#">Sla nieuwe afbeelding op</a>
+  <button>Sla nieuwe afbeelding op</button>
 
 </main>
 
