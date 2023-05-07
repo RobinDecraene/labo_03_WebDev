@@ -1,17 +1,5 @@
-.topRow{
+table {
   width: 80%;
-  border: solid green;
-  padding: 1rem;
-}
-
-.topRow ul{
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  justify-content: space-between;
-  font-size: 1.2rem;
-  margin: 0;
-  padding: 0;
 }
 
 

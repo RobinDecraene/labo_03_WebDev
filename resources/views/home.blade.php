@@ -7,16 +7,19 @@
 @section('content')
 
 <main>
- <div class="topRow">
-    <ul>
-      <li>Image</li>
-      <li>Bestandslocatie</li>
-      <li></li>
-    </ul>
-  </div>
-  <div class="imgRow">
-
-  </div>
+  <table>
+    <tr>
+      <th>Image</th>
+      <th>Bestandslocatie</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+ 
   <a class="btn" href="#">Sla nieuwe afbeelding op</a>
 
 </main>
