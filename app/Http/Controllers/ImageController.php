@@ -14,18 +14,14 @@ class ImageController extends Controller
     return view('home', compact('images'));
    }
 
-   public function create()
-    {
+   public function create(){
         return view('create');
     }
 
-    public function store(Request $r)
-    {
-
+    public function store(Request $r){
         $validationRules = [
             'bronlocatie' => 'required',
-            'image' => 'required',
-            
+            'image' => 'required'
         ];
 
         $r->validate($validationRules);
@@ -38,9 +34,7 @@ class ImageController extends Controller
         return redirect()->route('create');
     }
 
-   public function delete(Image $image)
-   {
-
+   public function delete(Image $image){
        $image->delete();
        return redirect()->route('home');
    }
