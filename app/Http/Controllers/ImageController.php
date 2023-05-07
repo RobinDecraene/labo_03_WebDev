@@ -19,6 +19,25 @@ class ImageController extends Controller
         return view('create');
     }
 
+    public function store(Request $r)
+    {
+
+        $validationRules = [
+            'bronlocatie' => 'required',
+            'image' => 'required',
+            
+        ];
+
+        $r->validate($validationRules);
+
+        $image = new Image();
+        $image->bronlocatie = $r->bronlocatie;
+        $image->image = $r->image;
+        $image->save();
+
+        return redirect()->route('create');
+    }
+
    public function delete(Image $image)
    {
 
