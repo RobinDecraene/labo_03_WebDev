@@ -34,6 +34,10 @@
       @if($errors->has('image')) style="border-color: red;" @endif>
 </div>
 
+<div>
+  <button type="submit" >Voeg nieuwe afbeelding toe</button>
+</div>
+
   </form>
 
 
