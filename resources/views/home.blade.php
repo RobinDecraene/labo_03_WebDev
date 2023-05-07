@@ -25,7 +25,7 @@
           @csrf
           @method('DELETE')
           <button type="submit">Verwijder</button>
-      </form>
+        </form>
       </td>
     </tr>
       
