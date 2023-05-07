@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('uploads', function (Blueprint $table) {
             $table->id();
             $table->string('url');
-            $table->string('titlle');
+            $table->string('title');
             $table->timestamps();
         });
     }
