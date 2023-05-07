@@ -45,7 +45,7 @@ class ImageController extends Controller
             var_dump('error reading file');
         }
     
-        return redirect()->route('create');
+        return redirect()->route('home');
     }
 
 
