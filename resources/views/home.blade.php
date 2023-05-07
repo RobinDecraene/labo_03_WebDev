@@ -9,17 +9,18 @@
 <main>
   <table>
     <tr>
+      <th>title</th>
+      <th>url</th>
       <th>Image</th>
-      <th>Bestandslocatie</th>
-      <th></th>
     </tr>
 
-    @foreach ($images as $image)
+    @foreach ($uploads as $upload)
     <tr>
-      <td><img src="{{ $image->image }}"></td>
-      <td>{{ $image->bronlocatie }}</td>
+      <td>{{ $upload->title}}></td>
+      <td>{{ $upload->url }}</td>
+      <td><img src="{{ $upload->upload }}"></td>
       <td>
-        <form action="{{ route('delete', $image->id) }}" method="POST">
+        <form action="{{ route('delete', $upload->id) }}" method="POST">
           @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-danger">Verwijder</button>

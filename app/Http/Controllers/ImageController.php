@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Image;
+use App\Models\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Testing\Fluent\Concerns\Has;
+use Symfony\Component\Console\Input\Input;
 
 class ImageController extends Controller
 {
    public function index(){
-    $images = Image::all();
+    $uploads = Upload::all();
 
-    return view('home', compact('images'));
+    return view('home', compact('uploads'));
    }
 
    public function create(){
@@ -20,22 +21,36 @@ class ImageController extends Controller
 
     public function store(Request $r){
         $validationRules = [
-            'bronlocatie' => 'required',
-            'image' => 'required'
+            'title' => 'required',
+            'url' => 'required'
         ];
-
+    
         $r->validate($validationRules);
-
-        $image = new Image();
-        $image->bronlocatie = $r->bronlocatie;
-        $image->image = $r->image;
-        $image->save();
-
+    
+        $upload = new Upload();
+        $upload->url = $r->url;
+        $upload->title = $r->title;
+        $upload->save();
+    
+        $fileContents = @file_get_contents($upload->url);
+    
+        if ($fileContents !== false) {
+            $save = file_put_contents('images/' . $upload->title . '.jpg', $fileContents);
+            if ($save !== false) {
+                var_dump('file has been added');
+            } else {
+                var_dump('error saving file');
+            }
+        } else {
+            var_dump('error reading file');
+        }
+    
         return redirect()->route('create');
     }
 
-   public function delete(Image $image){
-       $image->delete();
+
+   public function delete(Upload $upload){
+       $upload->delete();
        return redirect()->route('home');
    }
 }
