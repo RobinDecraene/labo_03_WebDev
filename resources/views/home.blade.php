@@ -18,7 +18,7 @@
     <tr>
       <td>{{ $upload->title}}></td>
       <td>{{ $upload->url }}</td>
-      <td><img src="{{ $upload->upload }}"></td>
+      <td><img src="images/cats.jpg"></td>
       <td>
         <form action="{{ route('delete', $upload->id) }}" method="POST">
           @csrf
